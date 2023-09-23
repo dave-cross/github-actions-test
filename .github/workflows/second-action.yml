@@ -1,0 +1,22 @@
+# `name` is required
+name: Second Workflow
+
+# These are events that trigger the the workflow to run
+on: push
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # name the job
+  second-job:
+    # The type of runner that the job will run on
+    # is this a docker image?
+    runs-on: ubuntu-latest
+
+    # Steps are the sequence of tasks to be executed for the job
+    steps:
+      - name: get repo
+        uses: actions/checkout@v3
+      - name: Print greeting
+        run: echo "Hello world!"
+      - name: Print goodbye
+        run: echo "Done - 88!"
